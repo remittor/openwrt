@@ -122,6 +122,11 @@ xiaomi,redmi-router-ac2100)
 youhua,wr1200js)
 	ucidef_set_led_netdev "internet" "INTERNET" "green:wan" "wan"
 	;;
+zyxel,keenetic-giga-iii)
+	ucidef_set_led_netdev "internet" "internet" "blue:internet" "wan"
+	ucidef_set_led_netdev "wifi2g" "Wifi 2.4G" "blue:wifi2G" "wlan0"
+	ucidef_set_led_netdev "wifi5g" "Wifi 5G" "blue:wifi5G" "wlan1"
+	;;
 esac
 
 board_config_flush

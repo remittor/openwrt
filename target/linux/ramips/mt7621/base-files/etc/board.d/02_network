@@ -157,6 +157,10 @@ ramips_setup_macs()
 		wan_mac=$label_mac
 		lan_mac=$(macaddr_add $label_mac 1)
 		;;
+	zyxel,keenetic-giga-iii)
+		wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory 0x28)" 1)
+		label_mac=$wan_mac
+		;;
 	esac
 
 	[ -n "$lan_mac" ] && ucidef_set_interface_macaddr "lan" $lan_mac
